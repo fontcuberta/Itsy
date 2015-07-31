@@ -1,0 +1,18 @@
+<h1> This is Itsy</h1>
+
+<ul>
+	<% @dates_array.each_with_index do |date, index| %>
+		<li><%= date.strftime "%A %Y-%m-%d"%></li>
+		<ul>
+			<li><span>Availability: </span><%= @availability_array[index] %></li>
+			<% if @availability_array[index]=="Yes" %>
+				<li><span>Price (cheapest): </span><%= @prices_array[index] %></li>
+			<% else %>
+				<li>Price: --</li>
+			<% end %>	
+		</ul>
+		<% end %>
+
+
+</ul>
+
